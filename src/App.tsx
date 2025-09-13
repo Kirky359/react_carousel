@@ -55,15 +55,6 @@ const App: React.FC = () => {
         />
       </div>
 
-      <Carousel
-        images={images}
-        step={step}
-        frameSize={frameSize}
-        itemWidth={itemWidth}
-        animationDuration={animationDuration}
-        infinite={false}
-      />
-
       <div>
         <label htmlFor="durationId">Animation duration</label>
         <input

@@ -71,8 +71,8 @@ const Carousel: React.FC<Props> = ({
       <button
         data-cy="next"
         className="Carousel__button Carousel__button--next"
-        disabled={!infinite && index === 0}
-        aria-disabled={!infinite && index === 0}
+        disabled={!infinite && index >= maxIndex}
+        aria-disabled={!infinite && index >= maxIndex}
         type="button"
         onClick={handleNext}
       >
