@@ -6,6 +6,7 @@ const App: React.FC = () => {
   const [step, setStep] = useState<number>(3);
   const [frameSize, setFrameSize] = useState<number>(3);
   const [itemWidth, setItemWidth] = useState<number>(130);
+  const [animationDuration, setAnimationDuration] = useState<number>(1000);
 
   const images = [
     './img/1.png',
@@ -51,6 +52,25 @@ const App: React.FC = () => {
           type="number"
           value={frameSize}
           onChange={e => setFrameSize(Number(e.target.value))}
+        />
+      </div>
+
+      <Carousel
+        images={images}
+        step={step}
+        frameSize={frameSize}
+        itemWidth={itemWidth}
+        animationDuration={animationDuration}
+        infinite={false}
+      />
+
+      <div>
+        <label htmlFor="durationId">Animation duration</label>
+        <input
+          id="durationId"
+          type="number"
+          value={animationDuration}
+          onChange={e => setAnimationDuration(Number(e.target.value))}
         />
       </div>
 
