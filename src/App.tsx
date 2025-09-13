@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Carousel from './components/Carousel';
 
@@ -20,6 +20,10 @@ const App: React.FC = () => {
     './img/9.png',
     './img/10.png',
   ];
+
+  useEffect(() => {
+    document.title = `Carousel with ${images.length} images`;
+  }, [images.length]);
 
   return (
     <div className="App">
@@ -70,7 +74,7 @@ const App: React.FC = () => {
         step={step}
         frameSize={frameSize}
         itemWidth={itemWidth}
-        animationDuration={300}
+        animationDuration={animationDuration}
         infinite={false}
       />
     </div>
